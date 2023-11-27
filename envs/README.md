@@ -1,0 +1,1 @@
+Utils to create batched environments and apply wrappers. Mostly based on [Stable Baselines3](https://github.com/DLR-RM/stable-baselines3).

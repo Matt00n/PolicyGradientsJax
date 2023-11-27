@@ -1,0 +1,1 @@
+Logic to create policy and value networks as well as action distributions. Mostly based on [Brax](https://github.com/google/brax).
