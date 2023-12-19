@@ -42,7 +42,7 @@ python ppo.py
 ```
 
 
-## Citing CleanRL
+## Citing PolicyGradientsJax
 
 **TBA**
 
