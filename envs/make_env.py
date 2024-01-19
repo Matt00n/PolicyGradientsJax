@@ -29,6 +29,7 @@ def make_env(
     norm_obs_keys: Optional[List[str]] = None,
     evaluate: bool = False,
     is_atari: bool = False,
+    capture_video: bool = False
 ) -> Union[SequencedBatchedEnv, ParallelBatchedEnv]:
     
     # TODO seed env
@@ -42,17 +43,17 @@ def make_env(
             }
         else:
             env_kwargs = {}
+        if capture_video:
+            env_kwargs['render_mode'] = 'rgb_array'
         if isinstance(env_id, str):
             env = gym.make(env_id, **env_kwargs) # TODO env kwards
         else:
             env = env_id
+        if capture_video:
+            env = gym.wrappers.RecordVideo(env, "./videos", episode_trigger=lambda x: x%10==1)
         if evaluate:
             env = RecordScores(env)
             # env = gym.wrappers.RecordEpisodeStatistics(env, 10)
-
-        # if capture_video:
-        #     if idx == 0:
-        #         env = gym.wrappers.RecordVideo(env, f"videos/{run_name}")
         if is_atari:
             env = NoopResetEnv(env, noop_max=30)
             env = MaxAndSkipEnv(env, skip=4)

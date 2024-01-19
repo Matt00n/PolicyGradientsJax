@@ -26,17 +26,17 @@ from networks.distributions import NormalTanhDistribution, ParametricDistributio
 
 class Config:
     # experiment
-    experiment_name = 'ppo_test_det_1'
-    seed = 10
+    experiment_name = 'ppo_test_video'
+    seed = 20
     platform = 'cpu' # CPU or GPU
-    capture_video = False # Not implemented
+    capture_video = True # Not implemented
     write_logs_to_file = False
     save_model = False
 
     # environment
-    env_id = 'HalfCheetah-v4' 
+    env_id = 'Humanoid-v4' 
     num_envs = 8
-    parallel_envs = False 
+    parallel_envs = True 
     clip_actions = False
     normalize_observations = True 
     normalize_rewards = True
@@ -44,11 +44,11 @@ class Config:
     clip_rewards = 10.
     eval_env = True
     num_eval_episodes = 10
-    eval_every = 2
+    eval_every = 5
     deterministic_eval = True
 
     # algorithm hyperparameters
-    total_timesteps = int(1e6) * 8
+    total_timesteps = int(1e6) * 8 
     learning_rate = 3e-4 
     unroll_length = 2048 
     anneal_lr = True
@@ -655,6 +655,7 @@ def main(_):
             clip_obs=Config.clip_observations,
             clip_rewards=Config.clip_rewards,
             evaluate=True,
+            capture_video=Config.capture_video,
         )
         eval_env.seed(int(eval_key[0]))
         eval_state = eval_env.reset()
