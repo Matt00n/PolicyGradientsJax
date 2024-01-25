@@ -21,7 +21,7 @@ You can read more about these algorithms in our upcoming comprehensive overview 
 
 ## Benchmark Results
 
-We report the performance of our implementations on common MuJoCo enviroments (v4), interfaced through [Gymnasium](https://gymnasium.farama.org).
+We report the performance of our implementations on common MuJoCo environments (v4), interfaced through [Gymnasium](https://gymnasium.farama.org).
 
 |![](/images/perf_plot_HalfCheetah.png)             |  ![](/images/perf_plot_Ant.png)|
 :-------------------------:|:-------------------------:
