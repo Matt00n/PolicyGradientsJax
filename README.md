@@ -44,7 +44,15 @@ python ppo.py
 
 ## Citing PolicyGradientsJax
 
-**TBA**
+If you use this repository in your work or find it useful, please cite our [paper](https://arxiv.org/abs/2401.13662):
 
-If you use this repository in your work or find it useful, please cite our upcoming paper.
-
+```bibtex
+@article{lehmann2024definitive,
+      title={The Definitive Guide to Policy Gradients in Deep Reinforcement Learning: Theory, Algorithms and Implementations}, 
+      author={Matthias Lehmann},
+      year={2024},
+      eprint={2401.13662},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
